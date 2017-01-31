@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#d32f2f</color>
+    <color name="colorPrimaryDark">#d32f2f</color>
+    <color name="colorAccent">#FFFFFF</color>
+    <color name="primary_text">#212121</color>
+
+    <!-- Card View shops colors -->
+    <color name="colorPrimaryCard">#F50057</color>
+    <color name="colorPrimaryDarkCard">#F50057</color>
+    <color name="colorAccentCard">#FF4081</color>
+    <color name="viewBg">#f1f5f8</color>
+    <color name="shop_title">#434343</color>
+
+    <!-- Tabs colors-->
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+
+    <!-- Tabs colors-->
+    <color name="lenta_tabs">#fcd826</color>
+    <color name="vliga_tabs">#f1e69f</color>
+    <color name="globus_tabs">#98c438</color>
+    <color name="pyaterochka_tabs">#e41111</color>
+    <color name="dixy_tabs">#ff6a00</color>
+    <color name="aura_tabs">#a2baae</color>
+    <color name="vernisazh_tabs">#bf7e7e</color>
+    <color name="rio_tabs">#606060</color>
+    <color name="flagman_tabs">#f5e2ac</color>
+    <color name="kosmos_tabs">#7fbbec</color>
+    <color name="yarkiy_tabs">#ef5c46</color>
+    <color name="auchan_tabs">#ef9776</color>
+    <color name="lotos_tabs">#fca3dc</color>
+    <color name="magnit_tabs">#df6565</color>
+    <color name="altair_tabs">#efe0a9</color>
+    <color name="rodina_tabs">#f5c7c7</color>
+    <color name="kinomax_tabs">#ca93e4</color>
+    <color name="kinoformat_tabs">#b5baf9</color>
+    <color name="cinema_star_tabs">#c2de5f</color>
+    <color name="vo_flagmane_tabs">#fa794a</color>
+    <color name="kosmik_tabs">#5bb492</color>
+    <color name="check_in_tabs">#d1a372</color>
+    <color name="samoe_vremya_tabs">#c2baba</color>
+    <color name="izbushka_tabs">#c6ba61</color>
+    <color name="med_tabs">#efcf7f</color>
+    <color name="gorka_tabs">#e9e0d1</color>
+    <color name="kuba_libre_tabs">#dce687</color>
+    <color name="paping_garage_tabs">#9bd752</color>
+    <color name="killfish_tabs">#f0f47f</color>
+    <color name="dudki_bar_tabs">#f4c972</color>
+    <color name="shkaf_tabs">#87acc1</color>
+    <color name="aladdin_tabs">#ca80c7</color>
+    <color name="dkhz_tabs">#865a35</color>
+    <color name="smokelab_tabs">#eab530</color>
+    <color name="les_tabs">#5297bf</color>
+    <color name="alesha_popovich_tabs">#deb029</color>
+    <color name="legkiy_par_tabs">#dae1a2</color>
+    <color name="korona_tabs">#80f9b8</color>
+    <color name="marmelad_tabs">#afe7ed</color>
+    <color name="vanil_tabs">#e8a8fa</color>
+    <color name="lanzhel_tabs">#eef5a7</color>
+    <color name="akvamarin_tabs">#d7bcfc</color>
+    <color name="bigbro_tabs">#f7bb60</color>
+    <color name="indigo_tabs">#1e7bde</color>
+    <color name="chop_tabs">#c4ccd4</color>
+    <color name="arena_tabs">#c4ccd4</color>
+    <color name="shinnik_tabs">#a4c9ed</color>
+    <color name="sevenk_tabs">#98c682</color>
+    <color name="lifestyle_tabs">#f9a898</color>
+    <color name="fivestar_tabs">#f4f5d4</color>
+    <color name="garag_tabs">#989fa6</color>
+    <color name="panacea_tabs">#f9ad49</color>
+    <color name="sportline_tabs">#a4c9ed</color>
+</resources>

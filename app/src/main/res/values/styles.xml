@@ -1,0 +1,347 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppTheme.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.Lenta" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/lenta_tabs</item>
+        <item name="colorPrimaryDark">@color/lenta_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Globus" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/globus_tabs</item>
+        <item name="colorPrimaryDark">@color/globus_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.VLiga" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/vliga_tabs</item>
+        <item name="colorPrimaryDark">@color/vliga_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Pyaterochka" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/pyaterochka_tabs</item>
+        <item name="colorPrimaryDark">@color/pyaterochka_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Dixy" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/dixy_tabs</item>
+        <item name="colorPrimaryDark">@color/dixy_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Aura" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/aura_tabs</item>
+        <item name="colorPrimaryDark">@color/aura_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Vernisazh" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/magnit_tabs</item>
+        <item name="colorPrimaryDark">@color/magnit_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Rio" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/rio_tabs</item>
+        <item name="colorPrimaryDark">@color/rio_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Flagman" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/flagman_tabs</item>
+        <item name="colorPrimaryDark">@color/flagman_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Kosmos" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/kosmos_tabs</item>
+        <item name="colorPrimaryDark">@color/kosmos_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Yarkiy" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/yarkiy_tabs</item>
+        <item name="colorPrimaryDark">@color/yarkiy_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Auchan" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/auchan_tabs</item>
+        <item name="colorPrimaryDark">@color/auchan_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Lotos" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/lotos_tabs</item>
+        <item name="colorPrimaryDark">@color/lotos_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Magnit" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/magnit_tabs</item>
+        <item name="colorPrimaryDark">@color/magnit_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Altair" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/altair_tabs</item>
+        <item name="colorPrimaryDark">@color/altair_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Rodina" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/rodina_tabs</item>
+        <item name="colorPrimaryDark">@color/rodina_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Kinomax" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/kinomax_tabs</item>
+        <item name="colorPrimaryDark">@color/kinomax_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Kinoformat" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/kinoformat_tabs</item>
+        <item name="colorPrimaryDark">@color/kinoformat_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.CinemaStar" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/cinema_star_tabs</item>
+        <item name="colorPrimaryDark">@color/cinema_star_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.VoFlagmane" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/vo_flagmane_tabs</item>
+        <item name="colorPrimaryDark">@color/vo_flagmane_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Kosmik" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/kosmik_tabs</item>
+        <item name="colorPrimaryDark">@color/kosmik_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.CheckIn" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/check_in_tabs</item>
+        <item name="colorPrimaryDark">@color/check_in_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.SamoeVremya" parent="AppTheme.NoActionBar" >
+    <item name="colorPrimary">@color/samoe_vremya_tabs</item>
+    <item name="colorPrimaryDark">@color/samoe_vremya_tabs</item>
+    <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Med" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/med_tabs</item>
+        <item name="colorPrimaryDark">@color/med_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Gorka" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/gorka_tabs</item>
+        <item name="colorPrimaryDark">@color/gorka_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.KubaLibre" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/kuba_libre_tabs</item>
+        <item name="colorPrimaryDark">@color/kuba_libre_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.PapinGarage" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/paping_garage_tabs</item>
+        <item name="colorPrimaryDark">@color/paping_garage_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Killfish" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/killfish_tabs</item>
+        <item name="colorPrimaryDark">@color/killfish_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.DudkiBar" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/dudki_bar_tabs</item>
+        <item name="colorPrimaryDark">@color/dudki_bar_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Shkaf" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/shkaf_tabs</item>
+        <item name="colorPrimaryDark">@color/shkaf_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Aladdin" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/aladdin_tabs</item>
+        <item name="colorPrimaryDark">@color/aladdin_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.DKHZ" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/dkhz_tabs</item>
+        <item name="colorPrimaryDark">@color/dkhz_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.SmokeLab" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/smokelab_tabs</item>
+        <item name="colorPrimaryDark">@color/smokelab_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Les" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/les_tabs</item>
+        <item name="colorPrimaryDark">@color/les_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Alesha" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/alesha_popovich_tabs</item>
+        <item name="colorPrimaryDark">@color/alesha_popovich_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Korona" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/korona_tabs</item>
+        <item name="colorPrimaryDark">@color/korona_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.LegkiyPar" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/legkiy_par_tabs</item>
+        <item name="colorPrimaryDark">@color/legkiy_par_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Marmelad" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/marmelad_tabs</item>
+        <item name="colorPrimaryDark">@color/marmelad_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Vanil" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/vanil_tabs</item>
+        <item name="colorPrimaryDark">@color/vanil_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Lanzhel" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/lanzhel_tabs</item>
+        <item name="colorPrimaryDark">@color/lanzhel_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Akvamarin" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/akvamarin_tabs</item>
+        <item name="colorPrimaryDark">@color/akvamarin_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="MenuLabelsStyle">
+        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="AppTheme.BigBro" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/bigbro_tabs</item>
+        <item name="colorPrimaryDark">@color/bigbro_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Indigo" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/indigo_tabs</item>
+        <item name="colorPrimaryDark">@color/indigo_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Chop" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/chop_tabs</item>
+        <item name="colorPrimaryDark">@color/chop_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Arena" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/arena_tabs</item>
+        <item name="colorPrimaryDark">@color/arena_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Shinnik" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/shinnik_tabs</item>
+        <item name="colorPrimaryDark">@color/shinnik_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.SevenK" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/sevenk_tabs</item>
+        <item name="colorPrimaryDark">@color/sevenk_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.LifeStyle" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/lifestyle_tabs</item>
+        <item name="colorPrimaryDark">@color/lifestyle_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.FiveStar" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/fivestar_tabs</item>
+        <item name="colorPrimaryDark">@color/fivestar_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Garag" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/garag_tabs</item>
+        <item name="colorPrimaryDark">@color/garag_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.Panacea" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/panacea_tabs</item>
+        <item name="colorPrimaryDark">@color/panacea_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="AppTheme.SportLine" parent="AppTheme.NoActionBar" >
+        <item name="colorPrimary">@color/sportline_tabs</item>
+        <item name="colorPrimaryDark">@color/sportline_tabs</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="MenuButtonsStyle">
+        <item name="fab_size">mini</item>
+        <item name="fab_showAnimation">@anim/jump_from_down</item>
+        <item name="fab_hideAnimation">@anim/jump_to_down</item>
+        <item name="fab_shadowColor">#444</item>
+        <item name="fab_colorNormal">#f9f235</item>
+        <item name="fab_colorPressed">#F2AB00</item>
+        <item name="fab_colorRipple">#D99200</item>
+    </style>
+
+</resources>
