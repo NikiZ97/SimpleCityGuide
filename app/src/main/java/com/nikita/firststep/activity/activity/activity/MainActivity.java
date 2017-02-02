@@ -1,16 +1,20 @@
 package com.nikita.firststep.activity.activity.activity;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -30,25 +34,24 @@ import com.nikita.firststep.activity.activity.other.CircleTransform;
 import nikita.myappfirststep.R;
 
 public class MainActivity extends AppCompatActivity {
-    private NavigationView navigationView;
-    private DrawerLayout drawer;
-    private ImageView imgNavHeaderBg, imgProfile;
-    private TextView txtName, txtSubName;
-    private Toolbar toolbar;
-    private FloatingActionButton fab;
+    private NavigationView mNavigationView;
+    private DrawerLayout mDrawer;
+    private ImageView mImgNavHeaderBg, mImgProfile;
+    private TextView mTxtName, mTxtSubName;
+    private Toolbar mToolbar;
+    private SharedPreferences mPrefs;
 
-
-    private static final String urlNavHeaderBg =
+    private static final String URL_NAV_HEADER_BG =
             "https://pp.vk.me/c626117/v626117629/35c4f/xjMARiQExNM.jpg";
-    private static final String urlProfileImg = "";
-    public static int navItemIndex = 0; // to identify current item from nav menu
+    private static final String URL_PROFILE_IMG = "";
+    public static int NAV_ITEM_INDEX = 0; // to identify current item from nav menu
 
     private static final String TAG_HOME = "home";
     private static final String TAG_SETTINGS = "settings";
     private static final String TAG_FAQ = "faq";
     private static String CURRENT_TAG = TAG_HOME;
 
-    private String[] activityTitles;
+    private String[] mActivityTitles;
 
     private Handler handler;
 
@@ -57,13 +60,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        mPrefs = getSharedPreferences("com.nikita.firststep.activity.activity", MODE_PRIVATE);
+
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
@@ -72,33 +77,49 @@ public class MainActivity extends AppCompatActivity {
 
         handler = new Handler();
 
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-        View navHeader = navigationView.getHeaderView(0);
+        mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mNavigationView = (NavigationView) findViewById(R.id.nav_view);
+        View navHeader = mNavigationView.getHeaderView(0);
 
-        txtSubName = (TextView) navHeader.findViewById(R.id.website);
-        txtName = (TextView) navHeader.findViewById(R.id.name);
-        imgNavHeaderBg = (ImageView) navHeader.findViewById(R.id.img_header_bg);
-        imgProfile = (ImageView) navHeader.findViewById(R.id.img_profile);
+        mTxtSubName = (TextView) navHeader.findViewById(R.id.website);
+        mTxtName = (TextView) navHeader.findViewById(R.id.name);
+        mImgNavHeaderBg = (ImageView) navHeader.findViewById(R.id.img_header_bg);
+        mImgProfile = (ImageView) navHeader.findViewById(R.id.img_profile);
 
 
-        activityTitles = getResources().getStringArray(R.array.nav_item_activity_titles);
-
-        if (fab != null) {
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Snackbar.make(view, "Вы написали письмо", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            });
-        }
+        mActivityTitles = getResources().getStringArray(R.array.nav_item_activity_titles);
 
         loadNavHeader();
         loadHomeFragment();
 
         setUpNavigationView();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (mPrefs.getBoolean("firstrun", true)) {
+            checkInternetConnection();
+            SharedPreferences.Editor edit = mPrefs.edit();
+            edit.putBoolean("firstrun", false).apply();
+        }
+    }
+
+    private void checkInternetConnection() {
+        if (!isNetworkStatusAvailable(MainActivity.this)) {
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Предупреждение")
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setMessage("Добро пожаловать!\nХотим предупредить, что у Вас нет " +
+                            "интернет-соединения, поэтому некоторые картинки не загрузятся, а " +
+                            "некоторые функции не будут работать корректно.")
+                    .setNegativeButton("Хорошо!", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {}
+                    });
+            builder.show();
+        }
     }
 
     /**
@@ -107,52 +128,52 @@ public class MainActivity extends AppCompatActivity {
      */
     private void loadNavHeader() {
         // nav header text
-        txtName.setText("");
+        mTxtName.setText("");
         // nav header subtext
-        txtSubName.setText("");
+        mTxtSubName.setText("");
 
         // load nav header background into ImageView
         Glide.with(this)
-                .load(urlNavHeaderBg).crossFade()
+                .load(URL_NAV_HEADER_BG).crossFade()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(imgNavHeaderBg);
+                .into(mImgNavHeaderBg);
 
         // load profile image into ImageView
         Glide.with(this)
-                .load(urlProfileImg).crossFade()
+                .load(URL_PROFILE_IMG).crossFade()
                 .thumbnail(0.5f)
                 .bitmapTransform(new CircleTransform(this))
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(imgProfile);
+                .into(mImgProfile);
 
     }
 
     private void setUpNavigationView() {
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+        mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        navItemIndex = 0;
+                        NAV_ITEM_INDEX = 0;
                         CURRENT_TAG = TAG_HOME;
                         break;
                     case R.id.nav_faq:
-                        navItemIndex = 1;
+                        NAV_ITEM_INDEX = 1;
                         CURRENT_TAG = TAG_FAQ;
                         break;
                     case R.id.nav_settings:
-                        navItemIndex = 2;
+                        NAV_ITEM_INDEX = 2;
                         CURRENT_TAG = TAG_SETTINGS;
                         break;
                     case R.id.nav_bus_schedule:
                         startActivity(new Intent(MainActivity.this, BusScheduleActivity.class));
-                        drawer.closeDrawers();
+                        mDrawer.closeDrawers();
                         return true;
                     case R.id.nav_about_us:
                         startActivity(new Intent(MainActivity.this, AboutActivity.class));
-                        drawer.closeDrawers();
+                        mDrawer.closeDrawers();
                         return true;
-                    default: navItemIndex = 0;
+                    default: NAV_ITEM_INDEX = 0;
                 }
 
                 // check if item is checked or not. If not, set it in checked state
@@ -170,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // listener for fab
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawer, toolbar,
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawer, mToolbar,
                 R.string.openDrawer, R.string.closeDrawer) {
 
             @Override
@@ -184,23 +205,23 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        drawer.addDrawerListener(actionBarDrawerToggle);
+        mDrawer.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
     }
 
     /**
      * This method check if user press back
-     * And if drawer is open it close
+     * And if mDrawer is open it close
      * Also this method load home fragment when user is not on
      * home fragment when he pressed back
      */
     @Override
     public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawers();
+        if (mDrawer.isDrawerOpen(GravityCompat.START)) {
+            mDrawer.closeDrawers();
         }
-        if (navItemIndex != 0) { // if user isn't on home fragment
-            navItemIndex = 0;
+        if (NAV_ITEM_INDEX != 0) { // if user isn't on home fragment
+            NAV_ITEM_INDEX = 0;
             CURRENT_TAG = TAG_HOME;
             loadHomeFragment();
             return;
@@ -217,10 +238,9 @@ public class MainActivity extends AppCompatActivity {
         setToolbarTitle();
 
         // if user select the current menu item, don't do anything, just close
-        // the navigation drawer
+        // the navigation mDrawer
         if (getSupportFragmentManager().findFragmentByTag(CURRENT_TAG) != null) {
-            drawer.closeDrawers();
-            toggleFab();
+            mDrawer.closeDrawers();
         }
 
         // Sometimes when fragment has huge data screen can handing,
@@ -241,21 +261,19 @@ public class MainActivity extends AppCompatActivity {
         // add runnable to message queue
         handler.post(runnable);
 
-        toggleFab();
+        // close navigation mDrawer
+        mDrawer.closeDrawers();
 
-        // close navigation drawer
-        drawer.closeDrawers();
-
-        // refresh toolbar menu
+        // refresh mToolbar menu
         invalidateOptionsMenu();
     }
 
     /**
-     * This method return respected Fragment depends on navItemIndex
+     * This method return respected Fragment depends on NAV_ITEM_INDEX
      * @return new Fragment
      */
     private Fragment getHomeFragment() {
-        switch (navItemIndex) {
+        switch (NAV_ITEM_INDEX) {
             case 0:
                 return new HomeFragment();
             case 1:
@@ -268,37 +286,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method shows or hides toggle FAB
-     */
-    private void toggleFab() {
-        if (navItemIndex == 0) {
-            fab.show();
-        } else {
-            fab.hide();
-        }
-    }
-
-    private void checkGit() {}
-
-    /**
-     * This method set toolbar title.
-     * Title depends on navItemIndex from setUpNavigationView()
+     * This method set mToolbar title.
+     * Title depends on NAV_ITEM_INDEX from setUpNavigationView()
      */
     private void setToolbarTitle() {
-        getSupportActionBar().setTitle(activityTitles[navItemIndex]);
+        getSupportActionBar().setTitle(mActivityTitles[NAV_ITEM_INDEX]);
     }
 
     /**
      * This method set checked menu that was chosen by user
      */
     private void selectNavMenu() {
-        navigationView.getMenu().getItem(navItemIndex).setChecked(true);
+        mNavigationView.getMenu().getItem(NAV_ITEM_INDEX).setChecked(true);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // show map icon on toolbar only when home fragment is active
-        if (navItemIndex == 0) {
+        // show map icon on mToolbar only when home fragment is active
+        if (NAV_ITEM_INDEX == 0) {
             getMenuInflater().inflate(R.menu.menu_main, menu);
         }
         return true;
@@ -307,11 +312,24 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        // click on map item on toolbar
+        // click on map item on mToolbar
         if (item.getItemId() == R.id.action_map) {
             startActivity(new Intent(this, MapActivity.class));
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public static boolean isNetworkStatusAvailable(Context context) {
+        ConnectivityManager con = (ConnectivityManager)
+                context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (con != null) {
+            NetworkInfo info = con.getActiveNetworkInfo();
+            if (info != null) {
+                if (info.isConnected())
+                    return true;
+            }
+        }
+        return false;
     }
 }

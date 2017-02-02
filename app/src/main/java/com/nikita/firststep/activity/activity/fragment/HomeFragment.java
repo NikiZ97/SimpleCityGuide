@@ -22,7 +22,7 @@ import nikita.myappfirststep.R;
 
 public class HomeFragment extends Fragment {
 
-    private final String placeNames[] = {
+    private final String mPlaceNames[] = {
             "Продуктовые магазины",
             "Торговые центры",
             "Развлечения",
@@ -31,7 +31,7 @@ public class HomeFragment extends Fragment {
             "Спорт",
     };
 
-    private final String imageUrls[] = {
+    private final String mImageUrls[] = {
             "https://i.ytimg.com/vi/5Wq44KiEiyM/maxresdefault.jpg",
             "https://i.ytimg.com/vi/YnlYs_QwUY0/maxresdefault.jpg",
             "http://gorodskidok48.ru/upload/medialibrary/fe9/fe90accfc6d7d646efac41a298101177.jpg",
@@ -65,49 +65,49 @@ public class HomeFragment extends Fragment {
                         switch (position) {
                             case 0:
                                 Intent intent = new Intent(getActivity(), CategoryActivity.class);
-                                intent.putExtra("layout", R.layout.activity_shops);
-                                intent.putExtra("toolbar", R.id.shops_toolbar);
-                                intent.putExtra("collapse", R.id.shops_collapsing_toolbar);
-                                intent.putExtra("title", "Магазины");
+                                intent.putExtra("layout", R.layout.activity_shops)
+                                        .putExtra("toolbar", R.id.shops_toolbar)
+                                        .putExtra("collapse", R.id.shops_collapsing_toolbar)
+                                        .putExtra("title", "Магазины");
                                 startActivity(intent);
                                 break;
                             case 1:
-                                Intent intent2 = new Intent(getActivity(), CategoryActivity.class);
-                                intent2.putExtra("layout", R.layout.activity_shop_centers);
-                                intent2.putExtra("toolbar", R.id.shops_centers_toolbar);
-                                intent2.putExtra("collapse", R.id.shop_centers_collapsing_toolbar);
-                                intent2.putExtra("title", "Торговые центры");
-                                startActivity(intent2);
+                                intent = new Intent(getActivity(), CategoryActivity.class);
+                                intent.putExtra("layout", R.layout.activity_shop_centers)
+                                        .putExtra("toolbar", R.id.shops_centers_toolbar)
+                                        .putExtra("collapse", R.id.shop_centers_collapsing_toolbar)
+                                        .putExtra("title", "Торговые центры");
+                                startActivity(intent);
                                 break;
                             case 2:
-                                Intent intent3 = new Intent(getActivity(), CategoryWithViewPagerActivity.class);
-                                intent3.putExtra("layout", R.layout.activity_fun);
-                                intent3.putExtra("toolbar", R.id.fun_toolbar);
-                                intent3.putExtra("title", "Развлечения");
-                                intent3.putExtra("title1", "Кинотеатры");
-                                intent3.putExtra("title2", "Бильярд/боулинг");
-                                intent3.putExtra("title3", "Антикафе");
-                                startActivity(intent3);
+                                intent = new Intent(getActivity(), CategoryWithViewPagerActivity.class);
+                                intent.putExtra("layout", R.layout.activity_fun)
+                                        .putExtra("toolbar", R.id.fun_toolbar)
+                                        .putExtra("title", "Развлечения")
+                                        .putExtra("title1", "Кинотеатры")
+                                        .putExtra("title2", "Бильярд/боулинг")
+                                        .putExtra("title3", "Антикафе");
+                                startActivity(intent);
                                 break;
                             case 3:
-                                Intent intent4 = new Intent(getActivity(), CategoryWithViewPagerActivity.class);
-                                intent4.putExtra("layout", R.layout.activity_night_life);
-                                intent4.putExtra("toolbar", R.id.night_life_toolbar);
-                                intent4.putExtra("title", "Ночная жизнь");
-                                intent4.putExtra("title1", "Клубы");
-                                intent4.putExtra("title2", "Бары");
-                                intent4.putExtra("title3", "Кальянные");
-                                startActivity(intent4);
+                                intent = new Intent(getActivity(), CategoryWithViewPagerActivity.class);
+                                intent.putExtra("layout", R.layout.activity_night_life)
+                                        .putExtra("toolbar", R.id.night_life_toolbar)
+                                        .putExtra("title", "Ночная жизнь")
+                                        .putExtra("title1", "Клубы")
+                                        .putExtra("title2", "Бары")
+                                        .putExtra("title3", "Кальянные");
+                                startActivity(intent);
                                 break;
                             case 4:
-                                Intent intent5 = new Intent(getActivity(), CategoryWithViewPagerActivity.class);
-                                intent5.putExtra("layout", R.layout.activity_beauty_and_health);
-                                intent5.putExtra("toolbar", R.id.beauty_and_health_toolbar);
-                                intent5.putExtra("title", "Красота и здоровье");
-                                intent5.putExtra("title1", "Бани/сауны");
-                                intent5.putExtra("title2", "Салоны красоты");
-                                intent5.putExtra("title3", "Парикмахерские");
-                                startActivity(intent5);
+                                intent = new Intent(getActivity(), CategoryWithViewPagerActivity.class);
+                                intent.putExtra("layout", R.layout.activity_beauty_and_health)
+                                        .putExtra("toolbar", R.id.beauty_and_health_toolbar)
+                                        .putExtra("title", "Красота и здоровье")
+                                        .putExtra("title1", "Бани/сауны")
+                                        .putExtra("title2", "Салоны красоты")
+                                        .putExtra("title3", "Парикмахерские");
+                                startActivity(intent);
                                 break;
                             case 5:
                                 startActivity(new Intent(getActivity(), CategorySportActivity.class));
@@ -126,10 +126,10 @@ public class HomeFragment extends Fragment {
 
     private ArrayList prepareData() {
         ArrayList placeItem = new ArrayList<>();
-        for (int i = 0; i < placeNames.length; i++) {
+        for (int i = 0; i < mPlaceNames.length; i++) {
             PlaceItem itemPlace = new PlaceItem();
-            itemPlace.setPlaceName(placeNames[i]);
-            itemPlace.setImageUrl(imageUrls[i]);
+            itemPlace.setPlaceName(mPlaceNames[i]);
+            itemPlace.setImageUrl(mImageUrls[i]);
             placeItem.add(itemPlace);
         }
         return placeItem;

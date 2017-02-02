@@ -1,10 +1,15 @@
 package com.nikita.firststep.activity.activity.activity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -21,10 +26,10 @@ import nikita.myappfirststep.R;
 
 public class BusScheduleActivity extends AppCompatActivity {
 
-    private String url = "http://yartr.ru";
-    private WebView webView;
-    private ProgressBar pb;
-    private ImageView imgHeader;
+    private static final String URL = "http://yartr.ru";
+    private WebView mWebView;
+    private ProgressBar mProgressBar;
+    private ImageView mImgHeader;
 
     @SuppressLint("PrivateResource")
     @Override
@@ -47,20 +52,35 @@ public class BusScheduleActivity extends AppCompatActivity {
             });
         }
 
-        webView = (WebView) findViewById(R.id.webView);
-        pb = (ProgressBar) findViewById(R.id.progressBar);
-        imgHeader = (ImageView) findViewById(R.id.backdrop);
+        mWebView = (WebView) findViewById(R.id.webView);
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
+        mImgHeader = (ImageView) findViewById(R.id.backdrop);
+
+        if (!isNetworkStatusAvailable(this)) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(BusScheduleActivity.this);
+            builder.setTitle("Нет сети")
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setMessage("Нет интернет-соединения. Пожалуйста, проверьте " +
+                            "подключение к сети и попробуйте снова.")
+                    .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            finish();
+                        }
+                    });
+            builder.show();
+        }
 
         initWebView();
         setCollapsingToolbar();
         loadImage();
 
-        webView.loadUrl(url);
+        mWebView.loadUrl(URL);
     }
 
     private void back() {
-        if (webView.canGoBack())
-            webView.goBack();
+        if (mWebView.canGoBack())
+            mWebView.goBack();
         else
             onBackPressed();
 
@@ -71,7 +91,7 @@ public class BusScheduleActivity extends AppCompatActivity {
                 .thumbnail(0.5f)
                 .crossFade()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(imgHeader);
+                .into(mImgHeader);
     }
 
     private void setCollapsingToolbar() {
@@ -104,20 +124,20 @@ public class BusScheduleActivity extends AppCompatActivity {
 
     private void initWebView() {
         // чтобы контролировать процесс загрузки страницы
-        webView.setWebChromeClient(new WebChromeClient());
+        mWebView.setWebChromeClient(new WebChromeClient());
         // чтобы взаимодейстовать со страницей, когда она загрузилась
-        webView.setWebViewClient(new WebViewClient() {
+        mWebView.setWebViewClient(new WebViewClient() {
 
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 super.onPageStarted(view, url, favicon);
-                pb.setVisibility(View.VISIBLE);
+                mProgressBar.setVisibility(View.VISIBLE);
                 invalidateOptionsMenu();
             }
 
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                webView.loadUrl(url);
+                mWebView.loadUrl(url);
                 return true;
             }
 
@@ -125,14 +145,27 @@ public class BusScheduleActivity extends AppCompatActivity {
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
-                pb.setVisibility(View.GONE);
+                mProgressBar.setVisibility(View.GONE);
                 invalidateOptionsMenu();
             }
         });
 
-        webView.clearCache(true);
-        webView.clearHistory();
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.setHorizontalScrollBarEnabled(false);
+        mWebView.clearCache(true);
+        mWebView.clearHistory();
+        mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.setHorizontalScrollBarEnabled(false);
+    }
+
+    public static boolean isNetworkStatusAvailable(Context context) {
+        ConnectivityManager con = (ConnectivityManager)
+                context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (con != null) {
+            NetworkInfo info = con.getActiveNetworkInfo();
+            if (info != null) {
+                if (info.isConnected())
+                    return true;
+            }
+        }
+        return false;
     }
 }

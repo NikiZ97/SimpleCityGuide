@@ -51,11 +51,11 @@ public class ShopsAdapter extends RecyclerView.Adapter<ShopsAdapter.MyViewHolder
         return yaroslavlObjectList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    class MyViewHolder extends RecyclerView.ViewHolder {
         TextView title, distance;
         ImageView image;
         CardView cardView;
-        public MyViewHolder(View itemView) {
+        MyViewHolder(View itemView) {
             super(itemView);
 
             title = (TextView) itemView.findViewById(R.id.title);
@@ -65,6 +65,10 @@ public class ShopsAdapter extends RecyclerView.Adapter<ShopsAdapter.MyViewHolder
         }
     }
 
+    /**
+     * This method adds founded elements into list
+     * @param newList - list that contains elements which were founded by searchview
+     */
     public void setFilter(ArrayList<YaroslavlObject> newList) {
         yaroslavlObjectList = new ArrayList<>();
         yaroslavlObjectList.addAll(newList);
