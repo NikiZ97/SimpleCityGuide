@@ -102,8 +102,8 @@ public class BarbershopFragment extends ObjectsFragment {
                 .setDescription(getString(R.string.indigo_description)).setAddress(getString(R.string.indigo_address))
                 .setEmail(getString(R.string.indigo_email)).setOpenTo(getString(R.string.indigo_open_to))
                 .setFab(R.drawable.ic_4_big).setPhone(getString(R.string.bigbro_phone_number))
-                .setFab1(R.drawable.ic_4_small).setFab2(R.drawable.ic_4_small)
-                .setFab3(R.drawable.ic_4_small).setFab4(R.drawable.ic_4_small).setMarkCount(4)
+                .setFab1(R.drawable.ic_4_small).setFab2(R.drawable.ic_5_small)
+                .setFab3(R.drawable.ic_3_small).setFab4(R.drawable.ic_4_small).setMarkCount(4)
                 .setCategory("barber").setLocation(getString(R.string.bigbro_location_text))
                 .build());
         objectList.add(YaroslavlObject.newBuilder()
