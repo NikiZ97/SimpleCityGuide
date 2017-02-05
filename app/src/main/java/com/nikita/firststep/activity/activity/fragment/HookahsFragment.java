@@ -101,9 +101,9 @@ public class HookahsFragment extends ObjectsFragment {
                 .setTabs(R.color.dkhz_tabs).setTheme(R.style.AppTheme_DKHZ)
                 .setDescription(getString(R.string.dkhz_description)).setAddress(getString(R.string.dkhz_address))
                 .setEmail(getString(R.string.dkhz_email)).setOpenTo(getString(R.string.dkhz_open_to))
-                .setFab(R.drawable.ic_43).setPhone(getString(R.string.dkhz_phone_number))
-                .setFab1(R.drawable.ic_4_small).setFab2(R.drawable.ic_4_small)
-                .setFab3(R.drawable.ic_5_small).setFab4(R.drawable.ic_4_small).setMarkCount(4)
+                .setFab(R.drawable.ic_47).setPhone(getString(R.string.dkhz_phone_number))
+                .setFab1(R.drawable.ic_4_small).setFab2(R.drawable.ic_5_small)
+                .setFab3(R.drawable.ic_5_small).setFab4(R.drawable.ic_5_small).setMarkCount(4)
                 .setCategory("hookah").setLocation(getString(R.string.dkhz_location_text))
                 .build());
         objectList.add(YaroslavlObject.newBuilder()
@@ -113,9 +113,9 @@ public class HookahsFragment extends ObjectsFragment {
                 .setTabs(R.color.smokelab_tabs).setTheme(R.style.AppTheme_SmokeLab)
                 .setDescription(getString(R.string.smokelab_description)).setAddress(getString(R.string.smokelab_address))
                 .setEmail(getString(R.string.smokelab_email)).setOpenTo(getString(R.string.smokelab_open_to))
-                .setFab(R.drawable.ic_43).setPhone(getString(R.string.dkhz_phone_number))
-                .setFab1(R.drawable.ic_4_small).setFab2(R.drawable.ic_4_small)
-                .setFab3(R.drawable.ic_5_small).setFab4(R.drawable.ic_4_small).setMarkCount(4)
+                .setFab(R.drawable.ic_47).setPhone(getString(R.string.dkhz_phone_number))
+                .setFab1(R.drawable.ic_4_small).setFab2(R.drawable.ic_5_small)
+                .setFab3(R.drawable.ic_5_small).setFab4(R.drawable.ic_5_small).setMarkCount(4)
                 .setCategory("hookah").setLocation(getString(R.string.smokelab_location_text))
                 .build());
         objectList.add(YaroslavlObject.newBuilder()
@@ -125,9 +125,9 @@ public class HookahsFragment extends ObjectsFragment {
                 .setTabs(R.color.les_tabs).setTheme(R.style.AppTheme_Les)
                 .setDescription(getString(R.string.les_description)).setAddress(getString(R.string.les_address))
                 .setEmail(getString(R.string.les_email)).setOpenTo(getString(R.string.les_open_to))
-                .setFab(R.drawable.ic_43).setPhone(getString(R.string.dkhz_phone_number))
-                .setFab1(R.drawable.ic_4_small).setFab2(R.drawable.ic_4_small)
-                .setFab3(R.drawable.ic_5_small).setFab4(R.drawable.ic_4_small).setMarkCount(4)
+                .setFab(R.drawable.ic_47).setPhone(getString(R.string.dkhz_phone_number))
+                .setFab1(R.drawable.ic_4_small).setFab2(R.drawable.ic_5_small)
+                .setFab3(R.drawable.ic_5_small).setFab4(R.drawable.ic_5_small).setMarkCount(4)
                 .setCategory("hookah").setLocation(getString(R.string.les_location_text))
                 .build());
     }

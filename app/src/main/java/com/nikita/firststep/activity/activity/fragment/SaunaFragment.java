@@ -81,6 +81,18 @@ public class SaunaFragment extends ObjectsFragment {
     protected void prepareObjects() {
         objectList = new ArrayList<>();
         objectList.add(YaroslavlObject.newBuilder()
+                .setName("Легкий пар").setDistance(2.4)
+                .setLatitude(57.637209).setLongitude(39.904599)
+                .setTimeToGo("ехать примерно 30-35 минут").setImage(R.drawable.legky_par)
+                .setTabs(R.color.legkiy_par_tabs).setTheme(R.style.AppTheme_LegkiyPar)
+                .setDescription(getString(R.string.par_description)).setAddress(getString(R.string.par_address))
+                .setEmail(getString(R.string.par_email)).setOpenTo(getString(R.string.par_open_to))
+                .setFab(R.drawable.ic_47).setPhone(getString(R.string.par_phone_number))
+                .setFab1(R.drawable.ic_4_small).setFab2(R.drawable.ic_5_small)
+                .setFab3(R.drawable.ic_5_small).setMarkCount(0)
+                .setCategory(null).setLocation(getString(R.string.par_location_text))
+                .build());
+        objectList.add(YaroslavlObject.newBuilder()
                 .setName("Алеша Попович").setDistance(2.5)
                 .setLatitude(57.622816).setLongitude(39.889766)
                 .setTimeToGo("ехать примерно 30-35 минут").setImage(R.drawable.alesha_popovich)
@@ -99,22 +111,10 @@ public class SaunaFragment extends ObjectsFragment {
                 .setTabs(R.color.korona_tabs).setTheme(R.style.AppTheme_Korona)
                 .setDescription(getString(R.string.korona_description)).setAddress(getString(R.string.korona_address))
                 .setEmail(getString(R.string.korona_email)).setOpenTo(getString(R.string.korona_open_to))
-                .setFab(R.drawable.ic_4_big).setPhone(getString(R.string.korona_phone_number))
-                .setFab1(R.drawable.ic_4_small).setFab2(R.drawable.ic_4_small)
+                .setFab(R.drawable.ic_43).setPhone(getString(R.string.korona_phone_number))
+                .setFab1(R.drawable.ic_4_small).setFab2(R.drawable.ic_5_small)
                 .setFab3(R.drawable.ic_4_small).setMarkCount(0)
                 .setCategory(null).setLocation(getString(R.string.korona_location_text))
-                .build());
-        objectList.add(YaroslavlObject.newBuilder()
-                .setName("Легкий пар").setDistance(2.4)
-                .setLatitude(57.637209).setLongitude(39.904599)
-                .setTimeToGo("ехать примерно 30-35 минут").setImage(R.drawable.legky_par)
-                .setTabs(R.color.legkiy_par_tabs).setTheme(R.style.AppTheme_LegkiyPar)
-                .setDescription(getString(R.string.par_description)).setAddress(getString(R.string.par_address))
-                .setEmail(getString(R.string.par_email)).setOpenTo(getString(R.string.par_open_to))
-                .setFab(R.drawable.ic_4_big).setPhone(getString(R.string.par_phone_number))
-                .setFab1(R.drawable.ic_4_small).setFab2(R.drawable.ic_3_small)
-                .setFab3(R.drawable.ic_5_small).setMarkCount(0)
-                .setCategory(null).setLocation(getString(R.string.par_location_text))
                 .build());
     }
 }

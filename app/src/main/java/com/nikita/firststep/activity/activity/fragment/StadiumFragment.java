@@ -83,6 +83,18 @@ public class StadiumFragment extends ObjectsFragment {
     protected void prepareObjects() {
         objectList = new ArrayList<>();
         objectList.add(YaroslavlObject.newBuilder()
+                .setName("Шинник").setDistance(4.2)
+                .setLatitude(57.628856).setLongitude(39.866541)
+                .setTimeToGo("ехать примерно 35-40 минут").setImage(R.drawable.shinnik)
+                .setTabs(R.color.shinnik_tabs).setTheme(R.style.AppTheme_Shinnik)
+                .setDescription(getString(R.string.shinnik_description)).setAddress(getString(R.string.shinnik_address))
+                .setEmail(getString(R.string.shinnik_email)).setOpenTo(getString(R.string.shinnik_open_to))
+                .setFab(R.drawable.ic_45).setPhone(getString(R.string.shinnik_phone_number))
+                .setFab1(R.drawable.ic_5_small).setFab2(R.drawable.ic_4_small)
+                .setFab3(R.drawable.ic_4_small).setFab4(R.drawable.ic_5_small).setMarkCount(4)
+                .setCategory("stadium").setLocation(getString(R.string.arena_location_text))
+                .build());
+        objectList.add(YaroslavlObject.newBuilder()
                 .setName("Арена").setDistance(6.3)
                 .setLatitude(57.588692).setLongitude(39.847660)
                 .setTimeToGo("ехать примерно 50 минут - 1ч.5м.").setImage(R.drawable.arena)
@@ -92,18 +104,6 @@ public class StadiumFragment extends ObjectsFragment {
                 .setFab(R.drawable.ic_43).setPhone(getString(R.string.arena_phone_number))
                 .setFab1(R.drawable.ic_5_small).setFab2(R.drawable.ic_5_small)
                 .setFab3(R.drawable.ic_3_small).setFab4(R.drawable.ic_4_small).setMarkCount(4)
-                .setCategory("stadium").setLocation(getString(R.string.arena_location_text))
-                .build());
-        objectList.add(YaroslavlObject.newBuilder()
-                .setName("Шинник").setDistance(4.2)
-                .setLatitude(57.628856).setLongitude(39.866541)
-                .setTimeToGo("ехать примерно 35-40 минут").setImage(R.drawable.shinnik)
-                .setTabs(R.color.shinnik_tabs).setTheme(R.style.AppTheme_Shinnik)
-                .setDescription(getString(R.string.shinnik_description)).setAddress(getString(R.string.shinnik_address))
-                .setEmail(getString(R.string.shinnik_email)).setOpenTo(getString(R.string.shinnik_open_to))
-                .setFab(R.drawable.ic_43).setPhone(getString(R.string.shinnik_phone_number))
-                .setFab1(R.drawable.ic_5_small).setFab2(R.drawable.ic_4_small)
-                .setFab3(R.drawable.ic_4_small).setFab4(R.drawable.ic_4_small).setMarkCount(4)
                 .setCategory("stadium").setLocation(getString(R.string.arena_location_text))
                 .build());
     }
