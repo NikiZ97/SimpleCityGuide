@@ -83,7 +83,7 @@ public class BarsFragment extends ObjectsFragment {
     protected void prepareObjects() {
         mObjectList = new ArrayList<>();
         mObjectList.add(YaroslavlObject.newBuilder()
-                .setName("Папин Гараж").setDistance(5.2)
+                .setName("Папин Гараж").setDistance(3.9)
                 .setLatitude(57.630183).setLongitude(39.869155)
                 .setTimeToGo("ехать примерно 30-35 минут").setImage(R.drawable.papin_garage)
                 .setTabs(R.color.paping_garage_tabs).setTheme(R.style.AppTheme_PapinGarage)
@@ -95,7 +95,7 @@ public class BarsFragment extends ObjectsFragment {
                 .setCategory("bar").setLocation(getString(R.string.pg_location_text))
                 .build());
         mObjectList.add(YaroslavlObject.newBuilder()
-                .setName("Дудки Бар").setDistance(4.4)
+                .setName("Дудки Бар").setDistance(3.0)
                 .setLatitude(57.626054).setLongitude(39.881874)
                 .setTimeToGo("ехать примерно 20-25 минут").setImage(R.drawable.dudki_bar)
                 .setTabs(R.color.dudki_bar_tabs).setTheme(R.style.AppTheme_DudkiBar)
@@ -119,7 +119,7 @@ public class BarsFragment extends ObjectsFragment {
                 .setCategory("bar").setLocation(getString(R.string.killfish_location_text))
                 .build());
         mObjectList.add(YaroslavlObject.newBuilder()
-                .setName("Куба-Либре").setDistance(4.0)
+                .setName("Куба-Либре").setDistance(2.6)
                 .setLatitude(57.625841).setLongitude(39.888833)
                 .setTimeToGo("ехать примерно 25-35 минут").setImage(R.drawable.kuba_libre)
                 .setTabs(R.color.kuba_libre_tabs).setTheme(R.style.AppTheme_KubaLibre)
@@ -131,7 +131,7 @@ public class BarsFragment extends ObjectsFragment {
                 .setCategory("bar").setLocation(getString(R.string.kuba_location_text))
                 .build());
         mObjectList.add(YaroslavlObject.newBuilder()
-                .setName("Шкаф").setDistance(4.4)
+                .setName("Шкаф").setDistance(3.0)
                 .setLatitude(57.625576).setLongitude(39.882116)
                 .setTimeToGo("ехать примерно 25-35 минут").setImage(R.drawable.shkaf)
                 .setTabs(R.color.shkaf_tabs).setTheme(R.style.AppTheme_Shkaf)

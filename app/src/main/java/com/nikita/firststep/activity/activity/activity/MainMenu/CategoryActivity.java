@@ -142,7 +142,7 @@ public class CategoryActivity extends AppCompatActivity implements SearchView.On
         }
         if (layout == R.layout.activity_shops) {
             mYaroslavlObjectList.add(YaroslavlObject.newBuilder()
-                    .setName("Лента").setDistance(2.7)
+                    .setName("Лента").setDistance(3.9)
                     .setLatitude(57.656384).setLongitude(39.943600)
                     .setTimeToGo("ехать примерно 15-20 минут").setImage(R.drawable.lenta)
                     .setTabs(R.color.lenta_tabs).setTheme(R.style.AppTheme_Lenta)
@@ -178,7 +178,7 @@ public class CategoryActivity extends AppCompatActivity implements SearchView.On
                     .setCategory("shop").setLocation(getString(R.string.globus_location_text))
                     .build());
             mYaroslavlObjectList.add(YaroslavlObject.newBuilder()
-                    .setName("Пятерочка").setDistance(3.9)
+                    .setName("Пятерочка").setDistance(3.4)
                     .setLatitude(57.637056).setLongitude(39.882716)
                     .setTimeToGo("ехать примерно 15 минут").setImage(R.drawable.pyaterochka)
                     .setTabs(R.color.pyaterochka_tabs).setTheme(R.style.AppTheme_Pyaterochka)
@@ -226,7 +226,7 @@ public class CategoryActivity extends AppCompatActivity implements SearchView.On
                     .setCategory("shop").setLocation(getString(R.string.lotos_location_text))
                     .build());
             mYaroslavlObjectList.add(YaroslavlObject.newBuilder()
-                    .setName("Магнит").setDistance(3.1)
+                    .setName("Магнит").setDistance(4.3)
                     .setLatitude(57.659619).setLongitude(39.953052)
                     .setTimeToGo("ехать примерно 25-30 минут").setImage(R.drawable.magnit)
                     .setTabs(R.color.magnit_tabs).setTheme(R.style.AppTheme_Magnit)
@@ -311,7 +311,7 @@ public class CategoryActivity extends AppCompatActivity implements SearchView.On
                     .setCategory("shopc").setLocation(getString(R.string.yarkiy_location_text))
                     .build());
             mYaroslavlObjectList.add(YaroslavlObject.newBuilder()
-                    .setName("Альтаир").setDistance(4.3)
+                    .setName("Альтаир").setDistance(13.4)
                     .setLatitude(57.697630).setLongitude(39.760264)
                     .setTimeToGo("ехать примерно 1ч.10м.").setImage(R.drawable.altair)
                     .setTabs(R.color.altair_tabs).setTheme(R.style.AppTheme_Altair)

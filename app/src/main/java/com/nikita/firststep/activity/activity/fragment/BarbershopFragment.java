@@ -83,7 +83,7 @@ public class BarbershopFragment extends ObjectsFragment {
     protected void prepareObjects() {
         objectList = new ArrayList<>();
         objectList.add(YaroslavlObject.newBuilder()
-                .setName("Big Bro").setDistance(2.3)
+                .setName("Big Bro").setDistance(2.8)
                 .setLatitude(57.628782).setLongitude(39.887152)
                 .setTimeToGo("ехать примерно 25-30 минут").setImage(R.drawable.bigbro)
                 .setTabs(R.color.bigbro_tabs).setTheme(R.style.AppTheme_BigBro)
@@ -95,7 +95,7 @@ public class BarbershopFragment extends ObjectsFragment {
                 .setCategory("barber").setLocation(getString(R.string.bigbro_location_text))
                 .build());
         objectList.add(YaroslavlObject.newBuilder()
-                .setName("Индиго").setDistance(2.3)
+                .setName("Индиго").setDistance(3.7)
                 .setLatitude(57.649324).setLongitude(39.966945)
                 .setTimeToGo("ехать примерно 30-40 минут").setImage(R.drawable.indigo)
                 .setTabs(R.color.indigo_tabs).setTheme(R.style.AppTheme_Indigo)
@@ -107,7 +107,7 @@ public class BarbershopFragment extends ObjectsFragment {
                 .setCategory("barber").setLocation(getString(R.string.bigbro_location_text))
                 .build());
         objectList.add(YaroslavlObject.newBuilder()
-                .setName("Chop-Chop").setDistance(2.6)
+                .setName("Chop-Chop").setDistance(2.3)
                 .setLatitude(57.624091).setLongitude(39.893786)
                 .setTimeToGo("ехать примерно 45-50 минут").setImage(R.drawable.chop_chop)
                 .setTabs(R.color.chop_tabs).setTheme(R.style.AppTheme_Chop)

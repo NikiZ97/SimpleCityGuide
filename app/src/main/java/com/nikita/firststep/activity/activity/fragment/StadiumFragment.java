@@ -83,7 +83,7 @@ public class StadiumFragment extends ObjectsFragment {
     protected void prepareObjects() {
         objectList = new ArrayList<>();
         objectList.add(YaroslavlObject.newBuilder()
-                .setName("Шинник").setDistance(4.2)
+                .setName("Шинник").setDistance(3.9)
                 .setLatitude(57.628856).setLongitude(39.866541)
                 .setTimeToGo("ехать примерно 35-40 минут").setImage(R.drawable.shinnik)
                 .setTabs(R.color.shinnik_tabs).setTheme(R.style.AppTheme_Shinnik)
@@ -95,7 +95,7 @@ public class StadiumFragment extends ObjectsFragment {
                 .setCategory("stadium").setLocation(getString(R.string.arena_location_text))
                 .build());
         objectList.add(YaroslavlObject.newBuilder()
-                .setName("Арена").setDistance(6.3)
+                .setName("Арена").setDistance(6.2)
                 .setLatitude(57.588692).setLongitude(39.847660)
                 .setTimeToGo("ехать примерно 50 минут - 1ч.5м.").setImage(R.drawable.arena)
                 .setTabs(R.color.arena_tabs).setTheme(R.style.AppTheme_Arena)

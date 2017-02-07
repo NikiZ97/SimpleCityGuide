@@ -120,7 +120,7 @@ public class CinemaFragment extends ObjectsFragment {
                 .setCategory("cinema").setLocation(getString(R.string.yarkiy_location_text))
                 .build());
         mObjectList.add(YaroslavlObject.newBuilder()
-                .setName("Синема-Стар").setDistance(7.3)
+                .setName("Синема-Стар").setDistance(7.8)
                 .setLatitude(57.670333).setLongitude(39.838551)
                 .setTimeToGo("ехать примерно 40-45 минут").setImage(R.drawable.cinema_star)
                 .setTabs(R.color.cinema_star_tabs).setTheme(R.style.AppTheme_CinemaStar)

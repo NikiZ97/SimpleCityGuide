@@ -83,7 +83,7 @@ public class HookahsFragment extends ObjectsFragment {
     protected void prepareObjects() {
         objectList = new ArrayList<>();
         objectList.add(YaroslavlObject.newBuilder()
-                .setName("Аладдин").setDistance(4.3)
+                .setName("Аладдин").setDistance(2.9)
                 .setLatitude(57.622292).setLongitude(39.883566)
                 .setTimeToGo("ехать примерно 30-40 минут").setImage(R.drawable.alladin)
                 .setTabs(R.color.aladdin_tabs).setTheme(R.style.AppTheme_Aladdin)
@@ -95,7 +95,7 @@ public class HookahsFragment extends ObjectsFragment {
                 .setCategory("hookah").setLocation(getString(R.string.aladdin_location_text))
                 .build());
         objectList.add(YaroslavlObject.newBuilder()
-                .setName("ДК ХЗ").setDistance(4.1)
+                .setName("ДК ХЗ").setDistance(2.8)
                 .setLatitude(57.626806).setLongitude(39.886006)
                 .setTimeToGo("ехать примерно 25-35 минут").setImage(R.drawable.dk_hz)
                 .setTabs(R.color.dkhz_tabs).setTheme(R.style.AppTheme_DKHZ)
@@ -107,7 +107,7 @@ public class HookahsFragment extends ObjectsFragment {
                 .setCategory("hookah").setLocation(getString(R.string.dkhz_location_text))
                 .build());
         objectList.add(YaroslavlObject.newBuilder()
-                .setName("Smoke Lab").setDistance(4.0)
+                .setName("Smoke Lab").setDistance(2.6)
                 .setLatitude(57.625976).setLongitude(39.889557)
                 .setTimeToGo("ехать примерно 25-35 минут").setImage(R.drawable.smoke_lab)
                 .setTabs(R.color.smokelab_tabs).setTheme(R.style.AppTheme_SmokeLab)
@@ -119,7 +119,7 @@ public class HookahsFragment extends ObjectsFragment {
                 .setCategory("hookah").setLocation(getString(R.string.smokelab_location_text))
                 .build());
         objectList.add(YaroslavlObject.newBuilder()
-                .setName("Лес").setDistance(3.8)
+                .setName("Лес").setDistance(4.0)
                 .setLatitude(57.626745).setLongitude(39.874376)
                 .setTimeToGo("ехать примерно 25-30 минут").setImage(R.drawable.les)
                 .setTabs(R.color.les_tabs).setTheme(R.style.AppTheme_Les)

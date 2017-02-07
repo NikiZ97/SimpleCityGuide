@@ -82,7 +82,7 @@ public class ClubsFragment extends ObjectsFragment {
     protected void prepareObjects() {
         objectList = new ArrayList<>();
         objectList.add(YaroslavlObject.newBuilder()
-                .setName("Мёд").setDistance(3.4)
+                .setName("Мёд").setDistance(1.9)
                 .setLatitude(57.621084).setLongitude(39.899989)
                 .setTimeToGo("ехать примерно 35-40 минут").setImage(R.drawable.med)
                 .setTabs(R.color.med_tabs).setTheme(R.style.AppTheme_Med)
@@ -94,7 +94,7 @@ public class ClubsFragment extends ObjectsFragment {
                 .setCategory("club").setLocation(getString(R.string.med_location_text))
                 .build());
         objectList.add(YaroslavlObject.newBuilder()
-                .setName("Горка").setDistance(4.1)
+                .setName("Горка").setDistance(2.9)
                 .setLatitude(57.630927).setLongitude(39.887097)
                 .setTimeToGo("ехать примерно 20-25 минут").setImage(R.drawable.gorka)
                 .setTabs(R.color.gorka_tabs).setTheme(R.style.AppTheme_Gorka)

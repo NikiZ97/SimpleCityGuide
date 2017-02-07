@@ -87,7 +87,7 @@ public class BusScheduleActivity extends AppCompatActivity {
     }
 
     private void loadImage() {
-        Glide.with(getApplicationContext()).load(R.drawable.marshrutka)
+        Glide.with(getApplicationContext()).load(R.drawable.cover_backdrop)
                 .thumbnail(0.5f)
                 .crossFade()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)

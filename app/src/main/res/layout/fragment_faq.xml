@@ -3,6 +3,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_marginTop="7dp"
+    android:layout_marginBottom="7dp"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <ScrollView
@@ -122,6 +123,54 @@
                 android:layout_marginTop="3dp"
                 android:textColor="@color/primary_text"
                 android:text="@string/answer_six" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"
+                android:text="@string/question_seven"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/primary_text"
+                android:text="@string/answer_seven" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"
+                android:text="@string/question_eight"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/primary_text"
+                android:text="@string/answer_eight" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"
+                android:text="@string/question_nine"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/primary_text"
+                android:text="@string/answer_nine" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

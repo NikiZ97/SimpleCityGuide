@@ -94,7 +94,7 @@ public class FitnessFragment extends ObjectsFragment {
                 .setCategory("fitness").setLocation(getString(R.string.sevenk_location_text))
                 .build());
         objectList.add(YaroslavlObject.newBuilder()
-                .setName("Панацея").setDistance(5.0)
+                .setName("Панацея").setDistance(4.8)
                 .setLatitude(57.621737).setLongitude(39.879238)
                 .setTimeToGo("ехать примерно 40-55 минут").setImage(R.drawable.panacea)
                 .setTabs(R.color.panacea_tabs).setTheme(R.style.AppTheme_Panacea)
@@ -118,7 +118,7 @@ public class FitnessFragment extends ObjectsFragment {
                 .setCategory("fitness").setLocation(getString(R.string.garag_location_text))
                 .build());
         objectList.add(YaroslavlObject.newBuilder()
-                .setName("5 звезд").setDistance(5.1)
+                .setName("5 звезд").setDistance(5.0)
                 .setLatitude(57.625489).setLongitude(39.850174)
                 .setTimeToGo("ехать примерно 30-40 минут").setImage(R.drawable.five_star)
                 .setTabs(R.color.fivestar_tabs).setTheme(R.style.AppTheme_FiveStar)
@@ -130,7 +130,7 @@ public class FitnessFragment extends ObjectsFragment {
                 .setCategory("fitness").setLocation(getString(R.string.lifestyle_location_text))
                 .build());
         objectList.add(YaroslavlObject.newBuilder()
-                .setName("Стиль Жизни").setDistance(3.1)
+                .setName("Стиль Жизни").setDistance(2.9)
                 .setLatitude(57.623879).setLongitude(39.883993)
                 .setTimeToGo("ехать примерно 30-35 минут").setImage(R.drawable.stil_zhizni)
                 .setTabs(R.color.lifestyle_tabs).setTheme(R.style.AppTheme_LifeStyle)
@@ -142,7 +142,7 @@ public class FitnessFragment extends ObjectsFragment {
                 .setCategory("fitness").setLocation(getString(R.string.lifestyle_location_text))
                 .build());
         objectList.add(YaroslavlObject.newBuilder()
-                .setName("Sport Line").setDistance(4.8)
+                .setName("Sport Line").setDistance(4.6)
                 .setLatitude(57.631493).setLongitude(39.858442)
                 .setTimeToGo("ехать примерно 30-40 минут").setImage(R.drawable.sport_line)
                 .setTabs(R.color.sportline_tabs).setTheme(R.style.AppTheme_SportLine)
