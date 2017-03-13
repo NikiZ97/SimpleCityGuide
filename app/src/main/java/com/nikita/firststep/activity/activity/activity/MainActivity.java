@@ -1,7 +1,6 @@
 package com.nikita.firststep.activity.activity.activity;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
@@ -44,16 +43,16 @@ public class MainActivity extends AppCompatActivity {
     private static final String URL_NAV_HEADER_BG =
             "https://pp.vk.me/c626117/v626117629/35c4f/xjMARiQExNM.jpg";
     private static final String URL_PROFILE_IMG = "";
-    public static int NAV_ITEM_INDEX = 0; // to identify current item from nav menu
+    public static int sNavItemIndex = 0;
 
     private static final String TAG_HOME = "home";
     private static final String TAG_SETTINGS = "settings";
     private static final String TAG_FAQ = "faq";
-    private static String CURRENT_TAG = TAG_HOME;
+    private static String sCurrentTag = TAG_HOME;
 
     private String[] mActivityTitles;
 
-    private Handler handler;
+    private Handler mHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,14 +67,9 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
-        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        mToolbar.setNavigationOnClickListener(view -> finish());
 
-        handler = new Handler();
+        mHandler = new Handler();
 
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         mNavigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -114,10 +108,7 @@ public class MainActivity extends AppCompatActivity {
                     .setMessage("Добро пожаловать!\nХотим предупредить, что у Вас нет " +
                             "интернет-соединения, поэтому некоторые картинки не загрузятся, а " +
                             "некоторые функции не будут работать корректно.")
-                    .setNegativeButton("Хорошо!", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {}
-                    });
+                    .setNegativeButton("Хорошо!", (dialogInterface, i) -> {});
             builder.show();
         }
     }
@@ -149,45 +140,42 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setUpNavigationView() {
-        mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.nav_home:
-                        NAV_ITEM_INDEX = 0;
-                        CURRENT_TAG = TAG_HOME;
-                        break;
-                    case R.id.nav_faq:
-                        NAV_ITEM_INDEX = 1;
-                        CURRENT_TAG = TAG_FAQ;
-                        break;
-                    case R.id.nav_settings:
-                        NAV_ITEM_INDEX = 2;
-                        CURRENT_TAG = TAG_SETTINGS;
-                        break;
-                    case R.id.nav_bus_schedule:
-                        startActivity(new Intent(MainActivity.this, BusScheduleActivity.class));
-                        mDrawer.closeDrawers();
-                        return true;
-                    case R.id.nav_about_us:
-                        startActivity(new Intent(MainActivity.this, AboutActivity.class));
-                        mDrawer.closeDrawers();
-                        return true;
-                    default: NAV_ITEM_INDEX = 0;
-                }
-
-                // check if item is checked or not. If not, set it in checked state
-                if (item.isChecked()) {
-                    item.setChecked(false);
-                } else {
-                    item.setChecked(true);
-                }
-                item.setChecked(true);
-
-                loadHomeFragment();
-
-                return true;
+        mNavigationView.setNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.nav_home:
+                    sNavItemIndex = 0;
+                    sCurrentTag = TAG_HOME;
+                    break;
+                case R.id.nav_faq:
+                    sNavItemIndex = 1;
+                    sCurrentTag = TAG_FAQ;
+                    break;
+                case R.id.nav_settings:
+                    sNavItemIndex = 2;
+                    sCurrentTag = TAG_SETTINGS;
+                    break;
+                case R.id.nav_bus_schedule:
+                    startActivity(new Intent(MainActivity.this, BusScheduleActivity.class));
+                    mDrawer.closeDrawers();
+                    return true;
+                case R.id.nav_about_us:
+                    startActivity(new Intent(MainActivity.this, AboutActivity.class));
+                    mDrawer.closeDrawers();
+                    return true;
+                default: sNavItemIndex = 0;
             }
+
+            // check if item is checked or not. If not, set it in checked state
+            if (item.isChecked()) {
+                item.setChecked(false);
+            } else {
+                item.setChecked(true);
+            }
+            item.setChecked(true);
+
+            loadHomeFragment();
+
+            return true;
         });
 
         // listener for fab
@@ -220,9 +208,9 @@ public class MainActivity extends AppCompatActivity {
         if (mDrawer.isDrawerOpen(GravityCompat.START)) {
             mDrawer.closeDrawers();
         }
-        if (NAV_ITEM_INDEX != 0) { // if user isn't on home fragment
-            NAV_ITEM_INDEX = 0;
-            CURRENT_TAG = TAG_HOME;
+        if (sNavItemIndex != 0) { // if user isn't on home fragment
+            sNavItemIndex = 0;
+            sCurrentTag = TAG_HOME;
             loadHomeFragment();
             return;
         }
@@ -239,27 +227,24 @@ public class MainActivity extends AppCompatActivity {
 
         // if user select the current menu item, don't do anything, just close
         // the navigation mDrawer
-        if (getSupportFragmentManager().findFragmentByTag(CURRENT_TAG) != null) {
+        if (getSupportFragmentManager().findFragmentByTag(sCurrentTag) != null) {
             mDrawer.closeDrawers();
         }
 
         // Sometimes when fragment has huge data screen can handing,
         // so it is better to use runnable to avoid it
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                // update the main content by replacing fragments
-                Fragment fragment = getHomeFragment();
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
-                        android.R.anim.fade_out);
-                fragmentTransaction.replace(R.id.frame, fragment, CURRENT_TAG);
-                fragmentTransaction.commitAllowingStateLoss();
-            }
+        Runnable runnable = () -> {
+            // update the main content by replacing fragments
+            Fragment fragment = getHomeFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
+                    android.R.anim.fade_out);
+            fragmentTransaction.replace(R.id.frame, fragment, sCurrentTag);
+            fragmentTransaction.commitAllowingStateLoss();
         };
 
         // add runnable to message queue
-        handler.post(runnable);
+        mHandler.post(runnable);
 
         // close navigation mDrawer
         mDrawer.closeDrawers();
@@ -269,11 +254,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method return respected Fragment depends on NAV_ITEM_INDEX
+     * This method return respected Fragment depends on sNavItemIndex
      * @return new Fragment
      */
     private Fragment getHomeFragment() {
-        switch (NAV_ITEM_INDEX) {
+        switch (sNavItemIndex) {
             case 0:
                 return new HomeFragment();
             case 1:
@@ -287,23 +272,23 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * This method set mToolbar title.
-     * Title depends on NAV_ITEM_INDEX from setUpNavigationView()
+     * Title depends on sNavItemIndex from setUpNavigationView()
      */
     private void setToolbarTitle() {
-        getSupportActionBar().setTitle(mActivityTitles[NAV_ITEM_INDEX]);
+        getSupportActionBar().setTitle(mActivityTitles[sNavItemIndex]);
     }
 
     /**
      * This method set checked menu that was chosen by user
      */
     private void selectNavMenu() {
-        mNavigationView.getMenu().getItem(NAV_ITEM_INDEX).setChecked(true);
+        mNavigationView.getMenu().getItem(sNavItemIndex).setChecked(true);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // show map icon on mToolbar only when home fragment is active
-        if (NAV_ITEM_INDEX == 0) {
+        if (sNavItemIndex == 0) {
             getMenuInflater().inflate(R.menu.menu_main, menu);
         }
         return true;

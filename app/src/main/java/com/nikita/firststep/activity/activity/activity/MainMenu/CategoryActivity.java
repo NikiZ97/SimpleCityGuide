@@ -58,12 +58,7 @@ public class CategoryActivity extends AppCompatActivity implements SearchView.On
         // back arrow from CategoryActivity to HomeFragment
         if (toolbar != null) {
             toolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
-            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    onBackPressed();
-                }
-            });
+            toolbar.setNavigationOnClickListener(view -> onBackPressed());
         }
 
         final CollapsingToolbarLayout collapsingToolbar =
